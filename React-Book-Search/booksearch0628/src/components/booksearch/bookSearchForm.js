@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
+// import { favorite } from "../booksearch/favorite";
 
 const BookSearchForm = ({
   onSubmitHandler,
@@ -30,6 +32,13 @@ const BookSearchForm = ({
         <div className="jumbotron jumbotron-fluid mt-5 text-center">
           <div className="container">
             <h4 className="mb-3">
+              <Link
+                to={`/favorite`}
+                className="bg-dark"
+                style={{ borderRadius: "5px", margin: "0 5px" }}
+              >
+                My Favorite Books
+              </Link>
               <i className="fa fa-search" /> Search for Books
               <form className="" onSubmit={onSubmitHandler}>
                 <input
