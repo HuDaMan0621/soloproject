@@ -13,6 +13,7 @@ const BookSearchForm = ({
     minHeight: "100%",
     text: "center",
     margin: "50px",
+    // outline: "none",
   };
 
   return (
@@ -43,7 +44,12 @@ const BookSearchForm = ({
               <form className="" onSubmit={onSubmitHandler}>
                 <input
                   className="display-4 mb-3"
-                  style={{ fontSize: "1rem", width: "80%" }}
+                  style={{
+                    fontSize: "1rem",
+                    width: "80%",
+                    outline: "none",
+                    borderRadius: "5px",
+                  }}
                   type="search"
                   placeholder="How to Hack NASA with HTML, etc...,"
                   value={searchTerm}
