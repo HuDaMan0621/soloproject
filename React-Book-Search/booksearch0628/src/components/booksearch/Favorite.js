@@ -9,6 +9,22 @@ const Book = ({ book, deleteBook }) => {
     color: "red",
     backgroundColor: "DodgerBlue",
     text: "center",
+    marginBottom: "0px",
+    fontFamily: "Arial",
+    bottom: "0",
+    borderRadius: "5px",
+  };
+  const mystyle2 = {
+    margin: "5px",
+    backgroundColor: "DodgerBlue",
+    borderRadius: "3px",
+    border: "3px solid black",
+    boxShadow: "5px 10px 18px #888888",
+  };
+  const mystyle3 = {
+    color: "red",
+    backgroundColor: "DodgerBlue",
+    text: "center",
     marginBottom: "2px",
     fontFamily: "Arial",
     position: "absolute",
@@ -17,36 +33,44 @@ const Book = ({ book, deleteBook }) => {
   };
 
   return (
-    <div
-      className="card col-md-3 mb-5 text-white bg-primary mb-3"
-      style={{ margin: "5px" }}
-    >
-      <img
-        className="card-img-top"
-        style={{ marginTop: "5px", height: "250px" }}
-        alt={`${book.volumeInfo.title} book`}
-        //using the image url from google books based on book id to get the images
-        src={`http://books.google.com/books/content?id=${book.id}&printsec=frontcover&img=1&zoom=1&source=gbs_api`}
-      />
-      <div className="card-body">
-        <h4 className="card-title">Title: {book.volumeInfo.title}</h4>
-        <p className="card-text">
-          Author: {bookAuthors(book.volumeInfo.authors)}
-        </p>
-        <p>Volume Information: {book.volumeInfo.title}</p>
-        <Link to={`/book/${book.id}`} className="bg-dark" style={mystyle}>
-          Show Details
-        </Link>
-        <button
-          className=""
-          style={{ display: "flex", flexDirection: "column-reverse" }}
-          onClick={() => deleteBook(book)}
-        >
-          {" "}
-          Remove from Favorite
-        </button>
+    <>
+      <div
+        className="col-md-3 mb-5 text-white bg-primary mb-3"
+        style={mystyle2}
+      >
+        <img
+          className="card-img-top"
+          style={{ marginTop: "5px", height: "250px" }}
+          alt={`${book.volumeInfo.title} book`}
+          //using the image url from google books based on book id to get the images
+          src={`http://books.google.com/books/content?id=${book.id}&printsec=frontcover&img=1&zoom=1&source=gbs_api`}
+        />
+        <div className="card-body">
+          <h5 className="card-title">Title: {book.volumeInfo.title}</h5>
+          <p className="card-text">
+            Author: {bookAuthors(book.volumeInfo.authors)}
+          </p>
+          {/* <p>Volume Information: {book.volumeInfo.title}</p> style={mystyle3 style={mystyle}*/}
+          <div className="row" style={mystyle3}>
+            <div className="col-md">
+              <Link to={`/book/${book.id}`} className="bg-dark" style={mystyle}>
+                ShowDetails
+              </Link>
+            </div>
+            <div className="col-md">
+              <button
+                style={{ borderRadius: "5px" }}
+                className=""
+                onClick={() => deleteBook(book)}
+              >
+                {" "}
+                Remove
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 
