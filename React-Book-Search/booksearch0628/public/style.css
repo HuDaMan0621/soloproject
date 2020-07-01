@@ -1,0 +1,13 @@
+.alert {
+  background: var(--color-dark);
+  color: var(--color-primary);
+  padding: 1rem;
+  border-radius: 3px;
+  text-align: center;
+  margin-bottom: 5vh;
+  width: 100%;
+  max-width: 700px;
+  opacity: 0;
+  z-index: 2;
+  transition: all 0.6s ease-in-out;
+}

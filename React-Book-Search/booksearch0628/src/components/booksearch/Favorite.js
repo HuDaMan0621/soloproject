@@ -1,11 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { bookAuthors } from "../utils";
 import { connect } from "react-redux";
-import { addBook } from "../../redux/actions/favActions";
-import { favorite } from "./Favorite";
+import { deleteBook } from "../../redux/actions/favActions";
+import { bookAuthors } from "../utils";
 
-const Book = ({ book, addBook }) => {
+const Book = ({ book, deleteBook }) => {
   const mystyle = {
     color: "red",
     backgroundColor: "DodgerBlue",
@@ -41,10 +40,10 @@ const Book = ({ book, addBook }) => {
         <button
           className=""
           style={{ display: "flex", flexDirection: "column-reverse" }}
-          onClick={() => addBook(book)}
+          onClick={() => deleteBook(book)}
         >
           {" "}
-          Add Favorite
+          Remove from Favorite
         </button>
       </div>
     </div>
@@ -55,20 +54,39 @@ const Book = ({ book, addBook }) => {
   /* <button className="" style={{display: "flex", flexDirection: "column-reverse"}} onClick={() => this.props.addBook(book)//we want to pass the book} //this is how we hide the function from the event, any time we don't want to pass the event  > Add Favorite</button> */
 }
 
-const BooksList = ({ books, addBook }) => {
+const Favorite = ({ books, deleteBook }) => {
+  console.log(books);
   return (
-    <div className="row" style={{ display: "flex", justifyContent: "center" }}>
-      {books.items.map((book, index) => {
-        return <Book book={book} addBook={addBook} key={index} />;
-      })}
-    </div>
+    <>
+      <Link to={`/`}>Home Page</Link>
+      <div
+        className="row"
+        style={{ display: "flex", justifyContent: "center" }}
+      >
+        {books.map((book, index) => {
+          return (
+            <Book
+              book={book}
+              deleteBook={() => deleteBook(index)}
+              key={index}
+            />
+          );
+        })}
+      </div>
+    </>
   );
 };
 
 //the order is important
 const mapDispatchToProps = {
-  addBook: addBook,
+  deleteBook, //when the volume are the same, we can just use 1 naming convention
 };
 
-export default connect(null, mapDispatchToProps)(BooksList);
+const mapStateToProps = (state) => {
+  return {
+    books: state,
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Favorite);
 // export default connect(null, (the current state of the store) mapDispatchToProps(how we set the store) //we take this function and connect it to -> BooksList)(BooksList);
