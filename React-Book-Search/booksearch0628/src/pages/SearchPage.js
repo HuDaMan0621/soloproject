@@ -23,6 +23,7 @@ const SearchPage = () => {
     try {
       const result = await axios.get(`${API_URL}?q=${searchTerm}`);
       setBooks(result.data);
+      setSearchTerm("");
     } catch (error) {
       setError(true);
     }
