@@ -43,21 +43,23 @@ const BookSearchForm = ({
               <i className="fa fa-search" /> Search for Books
               <form className="" onSubmit={onSubmitHandler}>
                 <input
-                  className="display-4 mb-3"
+                  className="mainInput display-4 mb-3"
                   style={{
                     fontSize: "1rem",
                     width: "80%",
                     outline: "none",
                     borderRadius: "5px",
+                    marginTop: "20px",
                   }}
-                  type="search"
+                  type="text"
                   placeholder="How to Hack NASA with HTML, etc...,"
                   value={searchTerm}
                   onChange={onInputChange}
                   required
+                  defaultValue=""
                 />
                 <button
-                  className="btn btn-primary"
+                  className="btn btn-primary "
                   style={{ margin: "5px" }}
                   type="submit"
                 >
