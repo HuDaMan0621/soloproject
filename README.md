@@ -15,20 +15,10 @@ npm install
 npm start
 ```
 
-## Usage
+## Function Map
 
-```python
-import foobar
+![Function Map](https://github.com/HuDaMan0621/soloproject/blob/master/Solo%20Project%20(1).png?raw=true)
 
-foobar.pluralize('word') # returns 'words'
-foobar.pluralize('goose') # returns 'geese'
-foobar.singularize('phenomena') # returns 'phenomenon'
-```
+## Enter Secret Path
+On [Home Page](https://react-bookstore-space-entrance.netlify.app/#/), enter HOWTOHACKNASAWITHHTML on search bar, click on Ryu to enter.
 
-## Contributing
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
-
-Please make sure to update tests as appropriate.
-
-## License
-[MIT](https://choosealicense.com/licenses/mit/)
