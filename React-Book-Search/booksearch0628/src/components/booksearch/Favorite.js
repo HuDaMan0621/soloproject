@@ -52,20 +52,22 @@ const Book = ({ book, deleteBook }) => {
           </p>
           {/* <p>Volume Information: {book.volumeInfo.title}</p> style={mystyle3 style={mystyle}*/}
           <div className="row" style={mystyle3}>
-            <div className="col-md">
-              <Link to={`/book/${book.id}`} className="bg-dark" style={mystyle}>
-                ShowDetails
-              </Link>
-            </div>
-            <div className="col-md">
-              <button
-                style={{ borderRadius: "5px" }}
-                className=""
-                onClick={() => deleteBook(book)}
-              >
-                {" "}
-                Remove
-              </button>
+            <div className="bg-primary col-md" style={{ display: "flex", justifyContent: "colomun-end" }}>
+              <div className="bg-primary col-md">
+                <Link to={`/book/${book.id}`} className="bg-dark" style={mystyle}>
+                  ShowDetails
+                </Link>
+              </div>
+              <div className="bg-primary col-md">
+                <button
+                  style={{ borderRadius: "5px" }}
+                  className=""
+                  onClick={() => deleteBook(book)}
+                >
+                  {" "}
+                  Remove
+                </button>
+              </div>
             </div>
           </div>
         </div>
