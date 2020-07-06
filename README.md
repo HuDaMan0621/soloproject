@@ -22,5 +22,6 @@ npm start
 ## Enter Secret Path
 On [Home Page](https://react-bookstore-space-entrance.netlify.app/#/), enter HOWTOHACKNASAWITHHTML on search bar, click on Ryu to enter.
 
-##Part 2 of the project
+
+## Part 2 of the project
 [Link](https://github.com/HuDaMan0621/spacetour-360)
